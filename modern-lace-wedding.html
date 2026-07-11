@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elena &amp; Marco — September 12, 2026</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Jost:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#FAF7F2;
+    --white:#FFFFFF;
+    --charcoal:#2E2B28;
+    --blush:#E4BDB6;
+    --blush-deep:#B98A82;
+  }
+  html{scroll-behavior:smooth}
+  body{background:var(--ivory);color:var(--charcoal);font-family:'Jost',sans-serif;font-weight:300}
+  .display{font-family:'Italiana',serif}
+  .tracking-label{letter-spacing:.35em}
+
+  /* Arch photo frame */
+  .arch{border-radius:999px 999px 12px 12px;overflow:hidden;position:relative}
+  .arch::after{content:"";position:absolute;inset:10px;border:1px solid rgba(250,247,242,.65);border-radius:999px 999px 8px 8px;pointer-events:none}
+
+  /* Photo placeholders — replace with real images */
+  .ph{background:linear-gradient(160deg,#EAD9D4 0%,#DCC2BB 45%,#CBA79E 100%);display:flex;align-items:center;justify-content:center}
+  .ph span{color:rgba(46,43,40,.35);letter-spacing:.3em;font-size:.65rem;text-transform:uppercase}
+
+  /* Lace divider */
+  .lace{display:block;width:100%;height:34px}
+
+  /* Reveal on scroll */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none;transition:none}
+  }
+
+  /* FAQ */
+  details summary{cursor:pointer;list-style:none}
+  details summary::-webkit-details-marker{display:none}
+  details[open] .faq-plus{transform:rotate(45deg)}
+  .faq-plus{transition:transform .25s ease}
+
+  input,textarea,select{background:transparent;border:0;border-bottom:1px solid rgba(46,43,40,.3);padding:.6rem 0;width:100%;outline:none;font-family:inherit;font-weight:300}
+  input:focus,textarea:focus,select:focus{border-color:var(--blush-deep)}
+  .btn{background:var(--charcoal);color:var(--ivory);letter-spacing:.25em;text-transform:uppercase;font-size:.7rem;padding:1rem 2.5rem;transition:background .3s}
+  .btn:hover{background:var(--blush-deep)}
+  .btn:focus-visible,a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--blush-deep);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<!-- ══════════ NAV ══════════ -->
+<nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm" style="background:rgba(250,247,242,.85)">
+  <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="#home" class="display text-xl">E &amp; M</a>
+    <div class="hidden md:flex gap-8 text-[.7rem] uppercase tracking-label">
+      <a href="#story" class="hover:text-[var(--blush-deep)] transition-colors">Story</a>
+      <a href="#details" class="hover:text-[var(--blush-deep)] transition-colors">Details</a>
+      <a href="#gallery" class="hover:text-[var(--blush-deep)] transition-colors">Gallery</a>
+      <a href="#rsvp" class="hover:text-[var(--blush-deep)] transition-colors">RSVP</a>
+      <a href="#faq" class="hover:text-[var(--blush-deep)] transition-colors">FAQ</a>
+    </div>
+    <button id="musicBtn" aria-label="Toggle ambient music" class="text-[.65rem] uppercase tracking-label border border-[rgba(46,43,40,.3)] rounded-full px-4 py-2 hover:border-[var(--blush-deep)] transition-colors">♪ Music</button>
+  </div>
+</nav>
+
+<!-- ══════════ HERO ══════════ -->
+<header id="home" class="min-h-screen flex flex-col items-center justify-center px-6 pt-24 pb-16 text-center">
+  <p class="text-[.7rem] uppercase tracking-label text-[var(--blush-deep)] mb-6 reveal">Together with their families</p>
+  <h1 class="display text-6xl md:text-8xl leading-tight reveal">Elena <span class="text-[var(--blush-deep)]">&amp;</span> Marco</h1>
+  <p class="mt-6 text-sm md:text-base uppercase tracking-label reveal">September 12, 2026 · Villa Olivetto · Tuscany</p>
+
+  <div class="arch ph w-64 h-80 md:w-80 md:h-[26rem] mt-12 reveal"><span>Couple Photo</span></div>
+
+  <!-- Countdown -->
+  <div id="countdown" class="mt-12 flex gap-8 md:gap-14 reveal" aria-label="Countdown to the wedding">
+    <div><p id="cd-d" class="display text-4xl md:text-5xl">—</p><p class="text-[.6rem] uppercase tracking-label mt-2">Days</p></div>
+    <div><p id="cd-h" class="display text-4xl md:text-5xl">—</p><p class="text-[.6rem] uppercase tracking-label mt-2">Hours</p></div>
+    <div><p id="cd-m" class="display text-4xl md:text-5xl">—</p><p class="text-[.6rem] uppercase tracking-label mt-2">Minutes</p></div>
+    <div><p id="cd-s" class="display text-4xl md:text-5xl">—</p><p class="text-[.6rem] uppercase tracking-label mt-2">Seconds</p></div>
+  </div>
+</header>
+
+<!-- Lace divider -->
+<svg class="lace" viewBox="0 0 1200 34" preserveAspectRatio="none" aria-hidden="true">
+  <g fill="none" stroke="#B98A82" stroke-width="1" opacity=".55">
+    <path d="M0 8 Q 25 30 50 8 T 100 8 T 150 8 T 200 8 T 250 8 T 300 8 T 350 8 T 400 8 T 450 8 T 500 8 T 550 8 T 600 8 T 650 8 T 700 8 T 750 8 T 800 8 T 850 8 T 900 8 T 950 8 T 1000 8 T 1050 8 T 1100 8 T 1150 8 T 1200 8"/>
+    <g fill="#B98A82">
+      <circle cx="25" cy="24" r="1.6"/><circle cx="75" cy="24" r="1.6"/><circle cx="125" cy="24" r="1.6"/><circle cx="175" cy="24" r="1.6"/><circle cx="225" cy="24" r="1.6"/><circle cx="275" cy="24" r="1.6"/><circle cx="325" cy="24" r="1.6"/><circle cx="375" cy="24" r="1.6"/><circle cx="425" cy="24" r="1.6"/><circle cx="475" cy="24" r="1.6"/><circle cx="525" cy="24" r="1.6"/><circle cx="575" cy="24" r="1.6"/><circle cx="625" cy="24" r="1.6"/><circle cx="675" cy="24" r="1.6"/><circle cx="725" cy="24" r="1.6"/><circle cx="775" cy="24" r="1.6"/><circle cx="825" cy="24" r="1.6"/><circle cx="875" cy="24" r="1.6"/><circle cx="925" cy="24" r="1.6"/><circle cx="975" cy="24" r="1.6"/><circle cx="1025" cy="24" r="1.6"/><circle cx="1075" cy="24" r="1.6"/><circle cx="1125" cy="24" r="1.6"/><circle cx="1175" cy="24" r="1.6"/>
+    </g>
+  </g>
+</svg>
+
+<!-- ══════════ STORY ══════════ -->
+<section id="story" class="py-24 px-6" style="background:var(--white)">
+  <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+    <div class="arch ph w-full h-96 reveal"><span>Story Photo</span></div>
+    <div class="reveal">
+      <p class="text-[.7rem] uppercase tracking-label text-[var(--blush-deep)] mb-4">Our Story</p>
+      <h2 class="display text-4xl md:text-5xl mb-6">From Florence, with love</h2>
+      <p class="leading-relaxed mb-4">We met on a rainy afternoon in Florence, sharing an umbrella and a table at a tiny café near the Arno. Seven years, two cities, and countless plates of pasta later, Marco asked — and Elena said yes.</p>
+      <p class="leading-relaxed">Now we're returning to where it all began, and we can't imagine celebrating without you.</p>
+    </div>
+  </div>
+</section>
+
+<svg class="lace" viewBox="0 0 1200 34" preserveAspectRatio="none" aria-hidden="true" style="transform:scaleY(-1)">
+  <path d="M0 8 Q 25 30 50 8 T 100 8 T 150 8 T 200 8 T 250 8 T 300 8 T 350 8 T 400 8 T 450 8 T 500 8 T 550 8 T 600 8 T 650 8 T 700 8 T 750 8 T 800 8 T 850 8 T 900 8 T 950 8 T 1000 8 T 1050 8 T 1100 8 T 1150 8 T 1200 8" fill="none" stroke="#B98A82" stroke-width="1" opacity=".55"/>
+</svg>
+
+<!-- ══════════ DETAILS ══════════ -->
+<section id="details" class="py-24 px-6">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="text-[.7rem] uppercase tracking-label text-[var(--blush-deep)] mb-4 reveal">The Day</p>
+    <h2 class="display text-4xl md:text-5xl mb-14 reveal">Wedding Details</h2>
+    <div class="grid md:grid-cols-2 gap-10">
+      <div class="border border-[rgba(185,138,130,.4)] rounded-t-full px-8 pt-16 pb-10 reveal" style="background:var(--white)">
+        <p class="display text-3xl mb-3">Ceremony</p>
+        <p class="text-sm uppercase tracking-label mb-5 text-[var(--blush-deep)]">4:00 PM</p>
+        <p class="leading-relaxed text-sm">Villa Olivetto Gardens<br>Via delle Colline 14, Tuscany<br><br>An open-air ceremony among the olive trees. Please arrive by 3:30 PM.</p>
+      </div>
+      <div class="border border-[rgba(185,138,130,.4)] rounded-t-full px-8 pt-16 pb-10 reveal" style="background:var(--white)">
+        <p class="display text-3xl mb-3">Reception</p>
+        <p class="text-sm uppercase tracking-label mb-5 text-[var(--blush-deep)]">6:30 PM</p>
+        <p class="leading-relaxed text-sm">Villa Olivetto Terrace<br>Dinner, dancing &amp; fireworks under the Tuscan stars — until late.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ GALLERY ══════════ -->
+<section id="gallery" class="py-24 px-6" style="background:var(--white)">
+  <div class="max-w-5xl mx-auto text-center">
+    <p class="text-[.7rem] uppercase tracking-label text-[var(--blush-deep)] mb-4 reveal">Moments</p>
+    <h2 class="display text-4xl md:text-5xl mb-14 reveal">Gallery</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="arch ph h-64 reveal"><span>01</span></div>
+      <div class="arch ph h-64 md:mt-10 reveal"><span>02</span></div>
+      <div class="arch ph h-64 reveal"><span>03</span></div>
+      <div class="arch ph h-64 md:mt-10 reveal"><span>04</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ RSVP ══════════ -->
+<section id="rsvp" class="py-24 px-6">
+  <div class="max-w-xl mx-auto text-center">
+    <p class="text-[.7rem] uppercase tracking-label text-[var(--blush-deep)] mb-4 reveal">Join Us</p>
+    <h2 class="display text-4xl md:text-5xl mb-4 reveal">RSVP</h2>
+    <p class="text-sm mb-12 reveal">Kindly respond by <strong>July 15, 2026</strong></p>
+    <div class="space-y-8 text-left reveal">
+      <div><label for="r-name" class="text-[.65rem] uppercase tracking-label">Full name</label><input id="r-name" type="text" autocomplete="name"></div>
+      <div><label for="r-email" class="text-[.65rem] uppercase tracking-label">Email</label><input id="r-email" type="email" autocomplete="email"></div>
+      <div><label for="r-attend" class="text-[.65rem] uppercase tracking-label">Will you attend?</label>
+        <select id="r-attend">
+          <option>Joyfully accepts</option>
+          <option>Regretfully declines</option>
+        </select>
+      </div>
+      <div><label for="r-note" class="text-[.65rem] uppercase tracking-label">Dietary notes / message</label><textarea id="r-note" rows="3"></textarea></div>
+      <div class="text-center pt-4">
+        <button class="btn" id="rsvpBtn">Send RSVP</button>
+        <p id="rsvpMsg" class="text-sm mt-4 text-[var(--blush-deep)] hidden">Thank you! Your response has been recorded. ♡</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FAQ ══════════ -->
+<section id="faq" class="py-24 px-6" style="background:var(--white)">
+  <div class="max-w-2xl mx-auto">
+    <p class="text-[.7rem] uppercase tracking-label text-[var(--blush-deep)] mb-4 text-center reveal">Good to know</p>
+    <h2 class="display text-4xl md:text-5xl mb-12 text-center reveal">Questions &amp; Answers</h2>
+    <div class="divide-y divide-[rgba(185,138,130,.3)] reveal">
+      <details class="py-5">
+        <summary class="flex justify-between items-center"><span class="display text-xl">What should I wear?</span><span class="faq-plus text-2xl text-[var(--blush-deep)]">+</span></summary>
+        <p class="pt-4 text-sm leading-relaxed">Garden formal. Think light suits and flowing dresses — the ceremony is on grass, so consider block heels.</p>
+      </details>
+      <details class="py-5">
+        <summary class="flex justify-between items-center"><span class="display text-xl">Can I bring a plus one?</span><span class="faq-plus text-2xl text-[var(--blush-deep)]">+</span></summary>
+        <p class="pt-4 text-sm leading-relaxed">If your invitation includes a guest, absolutely! Otherwise, we're keeping the celebration intimate.</p>
+      </details>
+      <details class="py-5">
+        <summary class="flex justify-between items-center"><span class="display text-xl">Is there parking at the villa?</span><span class="faq-plus text-2xl text-[var(--blush-deep)]">+</span></summary>
+        <p class="pt-4 text-sm leading-relaxed">Yes — free parking is available at the villa entrance, and a shuttle runs from the town square every 30 minutes.</p>
+      </details>
+      <details class="py-5">
+        <summary class="flex justify-between items-center"><span class="display text-xl">Are children welcome?</span><span class="faq-plus text-2xl text-[var(--blush-deep)]">+</span></summary>
+        <p class="pt-4 text-sm leading-relaxed">We love your little ones, but this will be an adults-only evening — thank you for understanding.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="py-16 px-6 text-center" style="background:var(--charcoal);color:var(--ivory)">
+  <p class="display text-3xl mb-3">Elena &amp; Marco</p>
+  <p class="text-[.65rem] uppercase tracking-label opacity-70">September 12, 2026 · Tuscany, Italy</p>
+  <svg class="mx-auto mt-8" width="120" height="20" viewBox="0 0 120 20" aria-hidden="true">
+    <path d="M0 10 Q 15 20 30 10 T 60 10 T 90 10 T 120 10" fill="none" stroke="#E4BDB6" stroke-width="1"/>
+    <circle cx="60" cy="10" r="2.4" fill="#E4BDB6"/>
+  </svg>
+</footer>
+
+<script>
+/* ── Countdown ─────────────────────────── */
+const WEDDING_DATE = new Date('2026-09-12T16:00:00');
+function tick(){
+  const diff = WEDDING_DATE - new Date();
+  const set=(id,v)=>document.getElementById(id).textContent=v;
+  if(diff<=0){set('cd-d','0');set('cd-h','0');set('cd-m','0');set('cd-s','0');return;}
+  set('cd-d', Math.floor(diff/864e5));
+  set('cd-h', Math.floor(diff/36e5)%24);
+  set('cd-m', Math.floor(diff/6e4)%60);
+  set('cd-s', Math.floor(diff/1e3)%60);
+}
+tick(); setInterval(tick,1000);
+
+/* ── Scroll reveal ─────────────────────── */
+const io = new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ── RSVP (demo — connect to Canva Sheets / backend) ── */
+document.getElementById('rsvpBtn').addEventListener('click',()=>{
+  const name=document.getElementById('r-name').value.trim();
+  if(!name){document.getElementById('r-name').focus();return;}
+  document.getElementById('rsvpMsg').classList.remove('hidden');
+});
+
+/* ── Generative ambient music (Web Audio API) ── */
+let audioCtx=null, playing=false, timer=null, master=null;
+const SCALE=[261.63,293.66,329.63,392.00,440.00,523.25]; // C pentatonic-ish
+function note(){
+  if(!playing) return;
+  const o=audioCtx.createOscillator(), g=audioCtx.createGain();
+  o.type='sine';
+  o.frequency.value=SCALE[Math.floor(Math.random()*SCALE.length)]*(Math.random()<.3?.5:1);
+  const t=audioCtx.currentTime;
+  g.gain.setValueAtTime(0,t);
+  g.gain.linearRampToValueAtTime(.12,t+.4);
+  g.gain.exponentialRampToValueAtTime(.0001,t+3.5);
+  o.connect(g); g.connect(master);
+  o.start(t); o.stop(t+4);
+  timer=setTimeout(note, 900+Math.random()*1400);
+}
+document.getElementById('musicBtn').addEventListener('click',()=>{
+  if(!audioCtx){
+    audioCtx=new (window.AudioContext||window.webkitAudioContext)();
+    master=audioCtx.createGain(); master.gain.value=.6; master.connect(audioCtx.destination);
+  }
+  playing=!playing;
+  const btn=document.getElementById('musicBtn');
+  if(playing){ audioCtx.resume(); note(); btn.textContent='♪ Playing'; }
+  else{ clearTimeout(timer); btn.textContent='♪ Music'; }
+});
+</script>
+</body>
+</html>
