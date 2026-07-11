@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Modern Lace — Pages</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Jost:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root{--ivory:#FAF7F2;--white:#FFFFFF;--charcoal:#2E2B28;--blush:#E4BDB6;--blush-deep:#B98A82}
+  body{background:var(--ivory);color:var(--charcoal);font-family:'Jost',sans-serif;font-weight:300;margin:0}
+  .display{font-family:'Italiana',serif}
+  .tracking-label{letter-spacing:.35em}
+  .page{width:1440px;min-height:1080px;display:flex;flex-direction:column;justify-content:center}
+  .arch{border-radius:999px 999px 12px 12px;overflow:hidden;position:relative}
+  .arch::after{content:"";position:absolute;inset:10px;border:1px solid rgba(250,247,242,.65);border-radius:999px 999px 8px 8px;pointer-events:none}
+  .ph{background:linear-gradient(160deg,#EAD9D4 0%,#DCC2BB 45%,#CBA79E 100%);display:flex;align-items:center;justify-content:center}
+  .ph span{color:rgba(46,43,40,.35);letter-spacing:.3em;font-size:.65rem;text-transform:uppercase}
+  .lace{display:block;width:100%;height:34px}
+  input-line{display:block;border-bottom:1px solid rgba(46,43,40,.3);height:2.4rem}
+  .btn{background:var(--charcoal);color:var(--ivory);letter-spacing:.25em;text-transform:uppercase;font-size:.7rem;padding:1rem 2.5rem;display:inline-block}
+</style>
+</head>
+<body>
+<div data-document-role="page" data-label="Modern Lace Website" style="width:1440px">
+
+<!-- ══════════ PAGE 1: HERO ══════════ -->
+<section class="page items-center text-center px-16" style="background:var(--ivory)">
+  <p class="text-[.7rem] uppercase tracking-label mb-6" style="color:var(--blush-deep)">Together with their families</p>
+  <h1 class="display text-8xl leading-tight">Elena <span style="color:var(--blush-deep)">&amp;</span> Marco</h1>
+  <p class="mt-6 text-base uppercase tracking-label">September 12, 2026 · Villa Olivetto · Tuscany</p>
+  <div class="arch ph w-80 mt-12" style="height:26rem"><span>Couple Photo</span></div>
+  <div class="mt-12 flex gap-14">
+    <div><p class="display text-5xl">63</p><p class="text-[.6rem] uppercase tracking-label mt-2">Days</p></div>
+    <div><p class="display text-5xl">08</p><p class="text-[.6rem] uppercase tracking-label mt-2">Hours</p></div>
+    <div><p class="display text-5xl">24</p><p class="text-[.6rem] uppercase tracking-label mt-2">Minutes</p></div>
+    <div><p class="display text-5xl">51</p><p class="text-[.6rem] uppercase tracking-label mt-2">Seconds</p></div>
+  </div>
+</section>
+
+<!-- ══════════ PAGE 2: STORY ══════════ -->
+<section class="page px-24" style="background:var(--white)">
+  <svg class="lace mb-16" viewBox="0 0 1200 34" preserveAspectRatio="none">
+    <path d="M0 8 Q 25 30 50 8 T 100 8 T 150 8 T 200 8 T 250 8 T 300 8 T 350 8 T 400 8 T 450 8 T 500 8 T 550 8 T 600 8 T 650 8 T 700 8 T 750 8 T 800 8 T 850 8 T 900 8 T 950 8 T 1000 8 T 1050 8 T 1100 8 T 1150 8 T 1200 8" fill="none" stroke="#B98A82" stroke-width="1" opacity=".55"/>
+  </svg>
+  <div class="grid grid-cols-2 gap-20 items-center">
+    <div class="arch ph w-full" style="height:34rem"><span>Story Photo</span></div>
+    <div>
+      <p class="text-[.7rem] uppercase tracking-label mb-4" style="color:var(--blush-deep)">Our Story</p>
+      <h2 class="display text-6xl mb-8">From Florence, with love</h2>
+      <p class="leading-relaxed mb-4 text-lg">We met on a rainy afternoon in Florence, sharing an umbrella and a table at a tiny café near the Arno. Seven years, two cities, and countless plates of pasta later, Marco asked — and Elena said yes.</p>
+      <p class="leading-relaxed text-lg">Now we're returning to where it all began, and we can't imagine celebrating without you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PAGE 3: DETAILS ══════════ -->
+<section class="page items-center text-center px-24" style="background:var(--ivory)">
+  <p class="text-[.7rem] uppercase tracking-label mb-4" style="color:var(--blush-deep)">The Day</p>
+  <h2 class="display text-6xl mb-16">Wedding Details</h2>
+  <div class="grid grid-cols-2 gap-14 w-full max-w-4xl">
+    <div class="border px-10 pt-20 pb-12" style="border-color:rgba(185,138,130,.4);border-radius:999px 999px 0 0;background:var(--white)">
+      <p class="display text-4xl mb-3">Ceremony</p>
+      <p class="text-sm uppercase tracking-label mb-6" style="color:var(--blush-deep)">4:00 PM</p>
+      <p class="leading-relaxed">Villa Olivetto Gardens<br>Via delle Colline 14, Tuscany<br><br>An open-air ceremony among the olive trees. Please arrive by 3:30 PM.</p>
+    </div>
+    <div class="border px-10 pt-20 pb-12" style="border-color:rgba(185,138,130,.4);border-radius:999px 999px 0 0;background:var(--white)">
+      <p class="display text-4xl mb-3">Reception</p>
+      <p class="text-sm uppercase tracking-label mb-6" style="color:var(--blush-deep)">6:30 PM</p>
+      <p class="leading-relaxed">Villa Olivetto Terrace<br>Dinner, dancing &amp; fireworks under the Tuscan stars — until late.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PAGE 4: GALLERY ══════════ -->
+<section class="page items-center text-center px-24" style="background:var(--white)">
+  <p class="text-[.7rem] uppercase tracking-label mb-4" style="color:var(--blush-deep)">Moments</p>
+  <h2 class="display text-6xl mb-16">Gallery</h2>
+  <div class="grid grid-cols-4 gap-8 w-full">
+    <div class="arch ph" style="height:22rem"><span>01</span></div>
+    <div class="arch ph mt-12" style="height:22rem"><span>02</span></div>
+    <div class="arch ph" style="height:22rem"><span>03</span></div>
+    <div class="arch ph mt-12" style="height:22rem"><span>04</span></div>
+  </div>
+</section>
+
+<!-- ══════════ PAGE 5: RSVP ══════════ -->
+<section class="page items-center px-24" style="background:var(--ivory)">
+  <div class="w-full max-w-xl text-center">
+    <p class="text-[.7rem] uppercase tracking-label mb-4" style="color:var(--blush-deep)">Join Us</p>
+    <h2 class="display text-6xl mb-4">RSVP</h2>
+    <p class="mb-14">Kindly respond by <strong>July 15, 2026</strong></p>
+    <div class="space-y-10 text-left">
+      <div><p class="text-[.65rem] uppercase tracking-label mb-2">Full name</p><div style="border-bottom:1px solid rgba(46,43,40,.3);height:2.2rem"></div></div>
+      <div><p class="text-[.65rem] uppercase tracking-label mb-2">Email</p><div style="border-bottom:1px solid rgba(46,43,40,.3);height:2.2rem"></div></div>
+      <div><p class="text-[.65rem] uppercase tracking-label mb-2">Will you attend?</p><div style="border-bottom:1px solid rgba(46,43,40,.3);height:2.2rem"></div></div>
+      <div><p class="text-[.65rem] uppercase tracking-label mb-2">Dietary notes / message</p><div style="border-bottom:1px solid rgba(46,43,40,.3);height:5rem"></div></div>
+      <div class="text-center pt-6"><span class="btn">Send RSVP</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PAGE 6: FAQ + FOOTER ══════════ -->
+<section class="page px-24" style="background:var(--white)">
+  <div class="max-w-2xl mx-auto w-full">
+    <p class="text-[.7rem] uppercase tracking-label mb-4 text-center" style="color:var(--blush-deep)">Good to know</p>
+    <h2 class="display text-6xl mb-14 text-center">Questions &amp; Answers</h2>
+    <div>
+      <div class="py-6" style="border-bottom:1px solid rgba(185,138,130,.3)">
+        <p class="display text-2xl mb-3">What should I wear?</p>
+        <p class="text-base leading-relaxed">Garden formal. Think light suits and flowing dresses — the ceremony is on grass, so consider block heels.</p>
+      </div>
+      <div class="py-6" style="border-bottom:1px solid rgba(185,138,130,.3)">
+        <p class="display text-2xl mb-3">Can I bring a plus one?</p>
+        <p class="text-base leading-relaxed">If your invitation includes a guest, absolutely! Otherwise, we're keeping the celebration intimate.</p>
+      </div>
+      <div class="py-6" style="border-bottom:1px solid rgba(185,138,130,.3)">
+        <p class="display text-2xl mb-3">Is there parking at the villa?</p>
+        <p class="text-base leading-relaxed">Yes — free parking is available at the villa entrance, and a shuttle runs from the town square every 30 minutes.</p>
+      </div>
+      <div class="py-6">
+        <p class="display text-2xl mb-3">Are children welcome?</p>
+        <p class="text-base leading-relaxed">We love your little ones, but this will be an adults-only evening — thank you for understanding.</p>
+      </div>
+    </div>
+    <div class="text-center mt-20 pt-14" style="background:var(--charcoal);color:var(--ivory);padding:3.5rem 2rem">
+      <p class="display text-4xl mb-3">Elena &amp; Marco</p>
+      <p class="text-[.65rem] uppercase tracking-label opacity-70">September 12, 2026 · Tuscany, Italy</p>
+    </div>
+  </div>
+</section>
+
+</div>
+</body>
+</html>
